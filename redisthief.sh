@@ -153,7 +153,7 @@ while getopts 't:o:r:d:NhSsDq' OPTION; do
     S)
         OUTPUT_TO_STOUT_ONLY="1"
         ;;
-    S)
+    D)
         IS_DEBUG="1"
         ;;
     q)
