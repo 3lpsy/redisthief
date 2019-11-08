@@ -42,7 +42,9 @@ function show_usage() {
     echo "    -h     show this message";
     echo "";
     echo "examples:"
-    echo "    $ redisthief.sh -r 10.0.0.1:6379"
+    echo "    $ redisthief.sh -r 10.0.0.1:6379 -o /path/to/datadirectory"
+    echo "    $ redisthief.sh -r 10.0.0.1:6379,somerediserver.dev,192.168.1.1:6666:SomePass -D "
+
 }
 
 function check_redis_cli() {
@@ -77,7 +79,7 @@ function perform_theivery() {
         debugout "[+] targeting: ${host}:${port}" >&2;
 
         connect="$REDIS_BIN -h ${host} -p ${port}"
-        
+
         if [ ${#password} -gt 2 ]; then 
             connect="$REDIS_BIN -h ${host} -p ${port} -a '${password}'"
         fi
