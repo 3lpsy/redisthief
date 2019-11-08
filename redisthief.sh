@@ -120,6 +120,7 @@ while getopts 't:o:r:d:NhSs' OPTION; do
         ;;
     s)
         OUTPUT_TO_STOUT_ALSO="1"
+        ;;
     S)
         OUTPUT_TO_STOUT="1"
         ;;
