@@ -122,7 +122,7 @@ while getopts 't:o:r:d:NhSs' OPTION; do
     t)
         REDIS_TARGETS="$OPTARG"
         ;;
-    t)
+    d)
         GRAB_DELAY="$OPTARG"
         ;;
     N)
