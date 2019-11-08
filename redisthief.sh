@@ -72,7 +72,7 @@ function perform_theivery() {
 
                 if [ "$OUTPUT_TO_STOUT_ONLY" == "1" ]; then 
                     echo "[+] found key for ${host}:${port}: $k" >&2;
-                elif [ ! -d "${OUTPUT_DIRECTORY}/${k}" ]; then 
+                elif [ -d "${OUTPUT_DIRECTORY}/${k}" ]; then 
                     echo "[+] found old key for ${host}:${port}: $k" >&2;
                 else
                     echo "[+] found new key for ${host}:${port}: $k" >&2;
