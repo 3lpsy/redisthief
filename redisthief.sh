@@ -69,7 +69,8 @@ function perform_theivery() {
         
         if [ ${#keys} -gt 2 ]; then 
             for k in $(echo -n $keys); do
-
+                value=""
+                
                 if [ "$OUTPUT_TO_STOUT_ONLY" == "1" ]; then 
                     echo "[+] found key for ${host}:${port}: $k" >&2;
                 elif [ -d "${OUTPUT_DIRECTORY}/${k}" ]; then 
@@ -80,7 +81,7 @@ function perform_theivery() {
                  
                 echo "[+] downloading: $k" >&2;
 
-                value="$($connect GET '${k}')";
+                value="$($connect GET ${k})";
 
                 if [ "$OUTPUT_TO_STOUT_ONLY" != "1" ]; then 
                     if [ ! -d "${OUTPUT_DIRECTORY}/${k}" ]; then 
