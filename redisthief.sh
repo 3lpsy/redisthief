@@ -88,12 +88,12 @@ function perform_theivery() {
                         mkdir -p "${OUTPUT_DIRECTORY}/${k}";
                     fi
                     if [ "$NO_DOUBLE_DOWNLOAD" != "1" ]; then 
-                        echo "[+] saving $k to ${OUTPUT_DIRECTORY}/${k}/${date}.value.txt" >&2;
-                        echo "$value" > "${OUTPUT_DIRECTORY}/${k}/${date}.value.txt"
+                        echo "[+] saving $k to ${OUTPUT_DIRECTORY}/${k}/${date}.${host}.${port}.value.txt" >&2;
+                        echo "$value" > "${OUTPUT_DIRECTORY}/${k}/${date}.${host}.${port}.value.txt"
                     else
-                        if [ ! -f "${OUTPUT_DIRECTORY}/${k}/value.txt" ]; then 
-                            echo "[+] saving $k to ${OUTPUT_DIRECTORY}/${k}/value.txt" >&2;
-                            echo "$value" > "${OUTPUT_DIRECTORY}/${k}/value.txt"
+                        if [ ! -f "${OUTPUT_DIRECTORY}/${k}/${host}.${port}.value.txt" ]; then 
+                            echo "[+] saving $k to ${OUTPUT_DIRECTORY}/${k}/${host}.${port}.value.txt" >&2;
+                            echo "$value" > "${OUTPUT_DIRECTORY}/${k}/${host}.${port}.value.txt"
                         else
                             echo "[+] skipping duplicate $k" >&2;
                         fi
