@@ -134,7 +134,7 @@ while getopts 't:o:r:d:NhSs' OPTION; do
         OUTPUT_TO_STOUT_ALSO="1"
         ;;
     S)
-        OUTPUT_TO_STOUT="1"
+        OUTPUT_TO_STOUT_ONLY="1"
         ;;
     h)
       show_usage
