@@ -2,7 +2,7 @@
 
 REDIS_BIN="redis-cli";
 REDIS_TARGETS="";
-OUTPUT_DIRECTORY="";
+OUTPUT_DIRECTORY="$PWD";
 GRAB_DELAY="10";
 NO_DOUBLE_DOWNLOAD="0";
 OUTPUT_TO_STOUT_ONLY="0";
@@ -84,8 +84,13 @@ function perform_theivery() {
                         echo "[+] creating: ${OUTPUT_DIRECTORY}/${k}" >&2;
                         mkdir -p "${OUTPUT_DIRECTORY}/${k}";
                     fi
-
-                    echo "$value" > "${OUTPUT_DIRECTORY}/${k}/${date}.value.txt"
+                    if [ "$NO_DOUBLE_DOWNLOAD" != "1" ]; then 
+                        echo "$value" > "${OUTPUT_DIRECTORY}/${k}/${date}.value.txt"
+                    else
+                        if [ ! -f "${OUTPUT_DIRECTORY}/${k}/value.txt" ]; then 
+                            echo "$value" > "${OUTPUT_DIRECTORY}/${k}/value.txt"
+                        fi
+                    fi
                     if [ "$OUTPUT_TO_STOUT_ALSO" == "1" ]; then 
                         echo "${host}:${port}:KEY=${k}:VALUE=${value}";
                     fi
