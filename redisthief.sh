@@ -68,7 +68,7 @@ function perform_theivery() {
         keys="$($connect --scan --pattern '*')";
         
         if [ ${#keys} -gt 2 ]; then 
-            for k in "$(echo -n $keys)"; do
+            for k in $(echo -n $keys); do
 
                 if [ "$OUTPUT_TO_STOUT_ONLY" == "1" ]; then 
                     echo "[+] found key for ${host}:${port}: $k" >&2;
