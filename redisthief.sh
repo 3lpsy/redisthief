@@ -42,8 +42,8 @@ function show_usage() {
     echo "    -h     show this message";
     echo "";
     echo "examples:"
-    echo "    $ redisthief.sh -r 10.0.0.1:6379 -o /path/to/datadirectory"
-    echo "    $ redisthief.sh -r 10.0.0.1:6379,somerediserver.dev,192.168.1.1:6666:SomePass -D "
+    echo "    $ redisthief.sh -t 10.0.0.1:6379 -o /path/to/datadirectory"
+    echo "    $ redisthief.sh -t 10.0.0.1:6379,somerediserver.dev,192.168.1.1:6666:SomePass -D "
 
 }
 
