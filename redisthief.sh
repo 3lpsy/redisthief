@@ -127,7 +127,7 @@ function perform_theivery() {
                 fi
             done
         else
-            out "[+] no keys found for: ${host}:${port}" >&2;
+            debugout "[+] no keys found for: ${host}:${port}" >&2;
         fi
     done
 }
