@@ -28,7 +28,7 @@ optional flags:
     -h     show this message
 
 examples:
-    $ redisthief.sh -r 10.0.0.1:6379 -o /path/to/datadirectory
-    $ redisthief.sh -r 10.0.0.1:6379,somerediserver.dev,192.168.1.1:6666:SomePass -D
+    $ redisthief.sh -t 10.0.0.1:6379 -o /path/to/datadirectory
+    $ redisthief.sh -t 10.0.0.1:6379,somerediserver.dev,192.168.1.1:6666:SomePass -D
 
 ```
